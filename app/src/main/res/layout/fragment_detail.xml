@@ -1,0 +1,55 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="venue"
+            type="com.example.cafebazaartest.business.domain.model.Venue" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        tools:context="com.example.cafebazaartest.framework.presentation.detial.DetailFragment">
+
+        <ImageView
+            android:id="@+id/img_detail"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:imageUrl="@{`https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/`+venue.location.lng+`,`+venue.location.lat+`,12,10,20/400x400?access_token=pk.eyJ1IjoiZmFhZjEzNzQiLCJhIjoiY2tqbzJzdW02MGp1ODJ2bzgyYzc5aXM3NyJ9.7kAUwjkkRO92UBjIjVaSUg`}"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/name_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{venue.name}"
+            android:textSize="16sp"
+            android:textColor="#000"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="8dp"/>
+        <TextView
+            android:id="@+id/address_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="@{venue.location.address}"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="8dp"/>
+        <TextView
+            android:id="@+id/phone_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="@{venue.contact.formattedPhone}"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="8dp"/>
+
+
+
+    </LinearLayout>
+</layout>

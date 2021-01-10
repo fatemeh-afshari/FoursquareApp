@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="venue"
+            type="com.example.cafebazaartest.business.domain.model.Venue" />
+
+        <variable
+            name="itemClickListener"
+            type="com.example.cafebazaartest.framework.presentation.list.ListItemClickListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:elevation="5dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp">
+
+        <LinearLayout
+            android:id="@+id/main_lin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layoutDirection="rtl"
+            android:onClick="@{itemClickListener.onItemClick}"
+            android:orientation="vertical"
+            android:textDirection="rtl"
+            android:weightSum="100">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="70"
+                android:imageUrl="@{`https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/`+venue.location.lng+`,`+venue.location.lat+`,12,10,20/200x200?access_token=pk.eyJ1IjoiZmFhZjEzNzQiLCJhIjoiY2tqbzJzdW02MGp1ODJ2bzgyYzc5aXM3NyJ9.7kAUwjkkRO92UBjIjVaSUg`}"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="30"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@{venue.name}"
+                android:textColor="#000"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/venue_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{venue.id}"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
