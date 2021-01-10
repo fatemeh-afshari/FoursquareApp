@@ -1,2 +1,8 @@
-Š{aŠÊk¢7œ·®±íLT†«r­yËn­í«zÚè~+wFŠ&à¸¯x6­k—(®‹­Š{:¨ z½»%ëOiÉ"š+rm¦Ïÿv¸¯z
-(‚Wœ¢oßŠW¿wı]09o_ÔŞe§2W‰Av£@)Ãx£$¾'°ºÊ
+in this project we use :
+1- MVI architecture
+2-retrofit
+3-dagger2
+4-JetPack
+5-LiveData
+6-Glide
+7-Room
